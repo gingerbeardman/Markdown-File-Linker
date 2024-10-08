@@ -1,0 +1,33 @@
+{
+  "shadowOpacity" : 0,
+  "iconOffset" : [
+    0,
+    0
+  ],
+  "bottomColor" : {
+    "red" : 0.7175212502479553,
+    "blue" : 0.7175212502479553,
+    "green" : 0.7175212502479553,
+    "alpha" : 1
+  },
+  "symbolColor" : {
+    "red" : 0.9999999403953552,
+    "blue" : 0.9999999403953552,
+    "green" : 0.9999999403953552,
+    "alpha" : 1
+  },
+  "shadowHeight" : 0.3,
+  "version" : 1,
+  "symbol" : {
+    "family" : "sf-symbols",
+    "name" : "link"
+  },
+  "topColor" : {
+    "blue" : 0.7175212502479553,
+    "red" : 0.7175212502479553,
+    "green" : 0.7175212502479553,
+    "alpha" : 1
+  },
+  "iconScale" : 0.7240560368342597,
+  "id" : "24670896-9CE6-40DD-86CB-111B3E0DEB8D"
+}
