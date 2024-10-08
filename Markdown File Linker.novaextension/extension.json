@@ -1,0 +1,54 @@
+{
+	"identifier": "com.gingerbeardman.MarkdownFileLinker",
+	"name": "Markdown File Linker",
+	"organization": "gingerbeardman",
+	"description": "Insert links to local files as Markdown",
+	"version": "1.0",
+	"repository": "https://github.com/gingerbeardman/Markdown-File-Linker",
+	"bugs": "https://github.com/gingerbeardman/Markdown-File-Linker/issues",
+	"homepage": "https://www.gingerbeardman.com",
+	"funding": "https://ko-fi.com/gingerbeardman",
+	"categories": ["commands"],
+	"main": "main.js",
+	"activationEvents": [
+		"onCommand:file-linker.insertLink"
+	],
+	"entitlements": {
+		"filesystem": "readwrite",
+		"clipboard": "writeText"
+	},
+	"commands": {
+		"editor": [
+			{
+				"title": "Insert File Link",
+				"command": "file-linker.insertLink"
+			}
+		]
+	},
+	"config": [
+		{
+			"key": "file-linker.postsFolderName",
+			"title": "Root Folder Name",
+			"type": "string",
+			"default": "_posts"
+		},
+		{
+			"key": "file-linker.pathRegex",
+			"title": "Path Transformation Regex",
+			"type": "string",
+			"default": "^/?(\\d{4})/(\\d{2})-(\\d{2})-(.+)$"
+		},
+		{
+			"key": "file-linker.pathReplacement",
+			"title": "Path Replacement Pattern",
+			"type": "string",
+			"default": "/$1/$2/$3/$4/"
+		},
+		{
+			"key": "file-linker.extensionsToRemove",
+			"title": "File Extensions to Remove (comma-separated)",
+			"type": "string",
+			"default": ".md,.markdown"
+		}
+	]
+}
