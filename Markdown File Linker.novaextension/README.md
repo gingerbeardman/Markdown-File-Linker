@@ -12,12 +12,15 @@ You might also choose to set a keyboard shortcut using **Nova â†’ Settings... â†
 ## Results
 
 You choose a local file, such as:
+
 - `/Users/matt/Projects/blog/_posts/2023/2023-11-21-yoyozo-how-i-made-a-playdate-game-in-39kb.md`
 
 And it will be inserted as:
+
 - `/2023/11/21/yoyozo-how-i-made-a-playdate-game-in-39kb/`
 
 If you've selected some text before invoking the extension, you'll get:
+
 - `[YOYOZO](/2023/11/21/yoyozo-how-i-made-a-playdate-game-in-39kb/)`
 
 ### Configuration
