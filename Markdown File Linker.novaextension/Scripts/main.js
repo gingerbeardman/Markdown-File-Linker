@@ -1,5 +1,3 @@
-// main.js
-
 exports.activate = function() {
 	nova.commands.register("file-linker.insertLink", (workspace) => {
 		insertFileLink(workspace, false);
