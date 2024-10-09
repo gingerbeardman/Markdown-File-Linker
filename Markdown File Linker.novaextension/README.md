@@ -1,4 +1,4 @@
-**Markdown File Linker** allows you to insert links to local files as Markdown links, perfect for linking between articles in your Jekyll blog!
+**Markdown File Linker** allows you to insert links to local files as Markdown, perfect for linking between articles in your blog!
 
 ## Usage
 
