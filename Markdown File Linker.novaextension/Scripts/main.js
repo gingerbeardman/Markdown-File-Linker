@@ -23,18 +23,29 @@ exports.activate = function() {
 			const clipboardContent = await nova.clipboard.readText();
 
 			editor.edit((edit) => {
+				let lastInsertionPoint = null;
 				for (const range of selectedRanges.reverse()) {
 					const selectedText = editor.getTextInRange(range);
 					
 					let replacement = `[${selectedText}]()`;
+					let cursorOffset = replacement.length - 1;
+					
 					if (clipboardContent && clipboardContent.trim()) {
 						const trimmedContent = clipboardContent.trim();
 						if (trimmedContent.startsWith('http://') || trimmedContent.startsWith('https://')) {
 							replacement = `[${selectedText}](${trimmedContent})`;
+							cursorOffset = selectedText.length;
 						}
 					}
 					
 					edit.replace(range, replacement);
+					lastInsertionPoint = range.start + cursorOffset;
+				}
+				
+				// Set the cursor position after the edit is complete
+				if (lastInsertionPoint !== null) {
+					editor.selectedRange = new Range(lastInsertionPoint, lastInsertionPoint);
+					editor.scrollToCursorPosition();
 				}
 			});
 		} catch (error) {
