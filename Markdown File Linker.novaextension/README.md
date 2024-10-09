@@ -30,7 +30,7 @@ For an image you might end up with:
 
 - `![IMG](/images/posts/yoyozo-teaser.gif)`
 
-### Configuration
+## Configuration
 
 To configure global preferences, open **Extensions → Extension Library...** then select Markdown File Linker's **Settings** tab.
 
@@ -48,3 +48,7 @@ You can customise the following:
 	- default: `.md,.markdown`
 
 Defaults match those used by Jekyll static site generator and other blogging software.
+
+## Bonus!
+
+The extension also includes a function to wrap the selected text in a Markdown link, and if there is a URL on the clipboard it will be used as the destination of the link.

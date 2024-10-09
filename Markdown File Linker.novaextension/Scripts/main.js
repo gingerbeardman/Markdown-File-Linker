@@ -6,6 +6,41 @@ exports.activate = function() {
 	nova.commands.register("file-linker.insertImageLink", (workspace) => {
 		insertFileLink(workspace, true);
 	});
+
+	nova.commands.register("file-linker.wrapLink", async (editor) => {
+		if (!editor) {
+			console.error("No active editor");
+			return;
+		}
+
+		const selectedRanges = editor.selectedRanges;
+		
+		if (selectedRanges.length === 0 || selectedRanges[0].empty) {
+			return;
+		}
+
+		try {
+			const clipboardContent = await nova.clipboard.readText();
+
+			editor.edit((edit) => {
+				for (const range of selectedRanges.reverse()) {
+					const selectedText = editor.getTextInRange(range);
+					
+					let replacement = `[${selectedText}]()`;
+					if (clipboardContent && clipboardContent.trim()) {
+						const trimmedContent = clipboardContent.trim();
+						if (trimmedContent.startsWith('http://') || trimmedContent.startsWith('https://')) {
+							replacement = `[${selectedText}](${trimmedContent})`;
+						}
+					}
+					
+					edit.replace(range, replacement);
+				}
+			});
+		} catch (error) {
+			console.error("Error reading clipboard:", error);
+		}
+	});
 }
 
 function insertFileLink(workspace, isImage) {

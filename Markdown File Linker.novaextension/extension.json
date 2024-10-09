@@ -3,7 +3,7 @@
 	"name": "Markdown File Linker",
 	"organization": "gingerbeardman",
 	"description": "Insert links to local files as Markdown",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"repository": "https://github.com/gingerbeardman/Markdown-File-Linker",
 	"bugs": "https://github.com/gingerbeardman/Markdown-File-Linker/issues",
 	"homepage": "https://www.gingerbeardman.com",
@@ -12,10 +12,12 @@
 	"main": "main.js",
 	"activationEvents": [
 		"onCommand:file-linker.insertLink",
-		"onCommand:file-linker.insertImageLink"
+		"onCommand:file-linker.insertImageLink",
+		"onCommand:file-linker.wrapLink"
 	],
 	"entitlements": {
-		"filesystem": "readwrite"
+		"filesystem": "readwrite",
+		"clipboard": true
 	},
 	"commands": {
 		"editor": [
@@ -26,6 +28,11 @@
 			{
 				"title": "Insert Image Link",
 				"command": "file-linker.insertImageLink"
+			},
+			{
+				"title": "Wrap in Markdown Link",
+				"command": "file-linker.wrapLink",
+				"when": "editorHasSelection"
 			}
 		]
 	},

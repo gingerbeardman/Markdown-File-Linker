@@ -1,10 +1,14 @@
+## Version 1.2
+
+Added: Wrap in Markdown Link
+
 ## Version 1.1
 
-Add image support
+Added: support for Image Links
 
 ## Version 1.0.2 and 1.0.1
 
-Improve README formatting
+Change: README formatting
 
 ## Version 1.0
 
