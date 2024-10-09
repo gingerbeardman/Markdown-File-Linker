@@ -1,3 +1,7 @@
+## Version 1.2.1
+
+Improved: README and icon
+
 ## Version 1.2
 
 Added: Wrap in Markdown Link

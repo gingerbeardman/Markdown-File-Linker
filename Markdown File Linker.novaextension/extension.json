@@ -3,7 +3,7 @@
 	"name": "Markdown File Linker",
 	"organization": "gingerbeardman",
 	"description": "Insert links to local files as Markdown",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"repository": "https://github.com/gingerbeardman/Markdown-File-Linker",
 	"bugs": "https://github.com/gingerbeardman/Markdown-File-Linker/issues",
 	"homepage": "https://www.gingerbeardman.com",
