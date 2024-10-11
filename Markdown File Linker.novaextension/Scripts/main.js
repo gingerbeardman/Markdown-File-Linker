@@ -162,8 +162,8 @@ function getRelativePath(filePath, rootDir, isImage) {
 			relativePath = relativePath.substring(postsPrefix.length);
 		}
 		
-		// Use the existing transformation logic
-		const pathRegex = nova.workspace.config.get("file-linker.pathRegex", "string") || "^/?(\\d{4})/(\\d{2})-(\\d{2})-(.+)$";
+		// Get the user-defined regex pattern and replacement
+		const pathRegexString = nova.workspace.config.get("file-linker.pathRegex", "string") || "^\\/?\\d{4}\\/(\\d{4})-(\\d{2})-(\\d{2})-(.+)$";
 		const pathReplacement = nova.workspace.config.get("file-linker.pathReplacement", "string") || "/$1/$2/$3/$4/";
 		
 		// Get user-defined extensions to remove
@@ -179,14 +179,14 @@ function getRelativePath(filePath, rootDir, isImage) {
 		}
 		
 		try {
-			const regex = new RegExp(pathRegex);
-			const transformedPath = relativePath.replace(regex, pathReplacement);
+			const pathRegex = new RegExp(pathRegexString);
+			const transformedPath = relativePath.replace(pathRegex, pathReplacement);
 			
 			// Ensure the path starts and ends with a slash
 			return transformedPath.replace(/^\/?(.+?)\/?$/, "/$1/");
 		} catch (error) {
-			console.error("Error in regex transformation:", error);
-			// Fallback to a simple transformation if regex fails
+			console.error("Error in path transformation:", error);
+			// Fallback to the original path if transformation fails
 			return relativePath;
 		}
 	}

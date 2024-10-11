@@ -1,3 +1,7 @@
+## Version 1.3.0
+
+Fix: formatting of File links
+
 ## Version 1.2.2
 
 Improved: Wrap in Markdown Link behaviour
