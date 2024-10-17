@@ -1,33 +1,33 @@
 {
+  "shadowHeight" : 0.3,
+  "topColor" : {
+    "alpha" : 1,
+    "green" : 0.3529411764705882,
+    "red" : 0.2571384920881035,
+    "blue" : 0.3491748109318055
+  },
+  "iconScale" : 0.6779560368342596,
+  "id" : "24670896-9CE6-40DD-86CB-111B3E0DEB8D",
+  "symbolColor" : {
+    "green" : 0.9999999403953552,
+    "alpha" : 1,
+    "blue" : 0.9999999403953552,
+    "red" : 0.9999999403953552
+  },
+  "version" : 1,
   "symbol" : {
     "family" : "sf-symbols",
     "name" : "link"
   },
-  "id" : "24670896-9CE6-40DD-86CB-111B3E0DEB8D",
-  "iconScale" : 0.6779560368342596,
-  "shadowOpacity" : 0,
-  "version" : 1,
-  "bottomColor" : {
-    "alpha" : 1,
-    "blue" : 0.3529411764705882,
-    "green" : 0.32156862745098036,
-    "red" : 0.2901960784313725
-  },
-  "symbolColor" : {
-    "alpha" : 1,
-    "green" : 0.9999999403953552,
-    "red" : 0.9999999403953552,
-    "blue" : 0.9999999403953552
-  },
-  "shadowHeight" : 0.3,
   "iconOffset" : [
     0,
     0
   ],
-  "topColor" : {
-    "blue" : 0.3529411764705882,
-    "red" : 0.2901960784313725,
+  "bottomColor" : {
     "alpha" : 1,
-    "green" : 0.32156862745098036
-  }
+    "green" : 0.20452211054809652,
+    "blue" : 0.3529411764705882,
+    "red" : 0.22626210550856787
+  },
+  "shadowOpacity" : 0
 }
