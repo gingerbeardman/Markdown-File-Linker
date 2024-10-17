@@ -1,3 +1,7 @@
+## Version 1.3.1
+
+Change: readonly file access (was readwrite)
+
 ## Version 1.3.0
 
 Fix: formatting of File links
