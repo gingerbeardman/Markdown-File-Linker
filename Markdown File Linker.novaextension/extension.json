@@ -72,6 +72,6 @@
 			"title": "Remove URI scheme from link text",
 			"type": "boolean",
 			"default": true
-		},
+		}
 	]
 }
