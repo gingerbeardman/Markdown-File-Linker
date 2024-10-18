@@ -24,17 +24,24 @@ exports.activate = function() {
 
 			editor.edit((edit) => {
 				let lastInsertionPoint = null;
+				let pastedUri = false;
 				for (const range of selectedRanges.reverse()) {
 					const selectedText = editor.getTextInRange(range);
 					
 					let replacement = `[${selectedText}]()`;
-					let cursorOffset = replacement.length - 1;
+					let cursorOffset = selectedText.length;
 					
 					if (clipboardContent && clipboardContent.trim()) {
 						const trimmedContent = clipboardContent.trim();
 						if (trimmedContent.startsWith('http://') || trimmedContent.startsWith('https://')) {
-							replacement = `[${selectedText}](${trimmedContent})`;
-							cursorOffset = selectedText.length;
+							pastedUri = true;
+							const removeUriScheme = nova.config.get('file-linker.removeUriScheme')
+							if (removeUriScheme === true) {
+								const cleanedSelectedText = selectedText.replace(/^(https?:\/\/)/i, '');
+								replacement = `[${cleanedSelectedText}](${trimmedContent})`;
+							} else {
+								replacement = `[${selectedText}](${trimmedContent})`;
+							}
 						}
 					}
 					

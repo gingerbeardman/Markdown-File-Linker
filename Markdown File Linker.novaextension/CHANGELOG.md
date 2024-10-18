@@ -1,3 +1,7 @@
+## Version 1.3.3
+
+Add: remove URL scheme from link text
+
 ## Version 1.3.2
 
 Change: gradient icon
