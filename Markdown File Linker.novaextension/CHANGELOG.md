@@ -1,3 +1,7 @@
+## Version 1.3.4
+
+Change: file extensions are now an editable list
+
 ## Version 1.3.3
 
 Add: remove URL scheme from link text

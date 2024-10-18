@@ -174,8 +174,7 @@ function getRelativePath(filePath, rootDir, isImage) {
 		const pathReplacement = nova.workspace.config.get("file-linker.pathReplacement", "string") || "/$1/$2/$3/$4/";
 		
 		// Get user-defined extensions to remove
-		const extensionsString = nova.workspace.config.get("file-linker.extensionsToRemove", "string") || ".md,.markdown";
-		const extensionsToRemove = extensionsString.split(',').map(ext => ext.trim());
+		const extensionsToRemove = nova.workspace.config.get("file-linker.extensionsToRemove", "string") || [".md",".markdown"];
 		
 		// Remove configured extensions
 		for (const ext of extensionsToRemove) {
