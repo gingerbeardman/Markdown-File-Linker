@@ -49,7 +49,6 @@ exports.activate = function() {
 					lastInsertionPoint = range.start + cursorOffset;
 				}
 				
-				// Set the cursor position after the edit is complete
 				if (lastInsertionPoint !== null) {
 					editor.selectedRange = new Range(lastInsertionPoint, lastInsertionPoint);
 					editor.scrollToCursorPosition();
@@ -169,11 +168,7 @@ function getRelativePath(filePath, rootDir, isImage) {
 			relativePath = relativePath.substring(postsPrefix.length);
 		}
 		
-		// Get the user-defined regex pattern and replacement
-		const pathRegexString = nova.workspace.config.get("file-linker.pathRegex", "string") || "^\\/?\\d{4}\\/(\\d{4})-(\\d{2})-(\\d{2})-(.+)$";
-		const pathReplacement = nova.workspace.config.get("file-linker.pathReplacement", "string") || "/$1/$2/$3/$4/";
-		
-		// Get user-defined extensions to remove
+		// Get the user-defined extensions to remove
 		const extensionsToRemove = nova.workspace.config.get("file-linker.extensionsToRemove", "string") || [".md",".markdown"];
 		
 		// Remove configured extensions
@@ -183,6 +178,15 @@ function getRelativePath(filePath, rootDir, isImage) {
 				break;  // Remove only one extension
 			}
 		}
+
+		// New regex pattern that handles both:
+		// 1. /2023/2023-12-16-example.md
+		// 2. /reviews/2010-09-27-example.md
+		const defaultRegex = "^\\/?(?:.*?\\/)?(?:\\d{4}\\/)?(?:(\\d{4})-(\\d{2})-(\\d{2})-(.+))$";
+		const defaultReplacement = "/$1/$2/$3/$4/";
+		
+		const pathRegexString = nova.workspace.config.get("file-linker.pathRegex", "string") || defaultRegex;
+		const pathReplacement = nova.workspace.config.get("file-linker.pathReplacement", "string") || defaultReplacement;
 		
 		try {
 			const pathRegex = new RegExp(pathRegexString);

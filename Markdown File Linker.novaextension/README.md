@@ -16,7 +16,7 @@ You might also choose to set a keyboard shortcut using **Nova â†’ Settings... â†
 
 You choose a local file using the file selector, such as:
 
-- `/Users/matt/Projects/blog/_posts/2023/2023-11-21-yoyozo-how-i-made-a-playdate-game-in-39kb.md`
+- `_posts/2023/2023-11-21-yoyozo-how-i-made-a-playdate-game-in-39kb.md`
 
 And it will be inserted as:
 
@@ -25,6 +25,14 @@ And it will be inserted as:
 If you've selected some text before invoking the extension, you'll get:
 
 - `[YOYOZO](/2023/11/21/yoyozo-how-i-made-a-playdate-game-in-39kb/)`
+
+If the file is in a subfolder, such as:
+
+- `_posts/reviews/2013-06-29-maboshi.md`
+
+You'll get:
+
+- `/2013/06/29/maboshi/`
 
 For an image you might end up with:
 
@@ -41,7 +49,7 @@ You can customise the following:
 - Images Folder Name
 	- default: `images`
 - Path Transformation Regex
-	- default: `^/?(\d{4})/(\d{2})-(\d{2})-(.+)$`
+	- default: `^\/?(?:.*?\/)?(?:\d{4}\/)?(?:(\d{4})-(\d{2})-(\d{2})-(.+))$`
 - Path Replacement Pattern
 	- default: `/$1/$2/$3/$4/`
 - File Extension to Remove (comma separated)

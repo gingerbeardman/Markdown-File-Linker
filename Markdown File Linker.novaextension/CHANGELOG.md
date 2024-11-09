@@ -1,3 +1,7 @@
+## Version 1.4.x
+
+Add: support for linking to files inside folders in _posts
+
 ## Version 1.3.4 & 1.3.5
 
 Change: file extensions are now an editable list
